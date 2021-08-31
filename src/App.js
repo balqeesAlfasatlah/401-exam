@@ -1,5 +1,7 @@
 import React from 'react';
 import Header from './components/Header';
+import Home from './components/Home';
+import FavCrypto from './components/FavCrypto'
 import Footer from './components/Footer';
 import {
   BrowserRouter as Router,
@@ -7,7 +9,7 @@ import {
   Route
 } from "react-router-dom";
 import { withAuth0 } from '@auth0/auth0-react';
-
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 class App extends React.Component {
 
@@ -20,10 +22,10 @@ class App extends React.Component {
             <Header />
             <Switch>
               <Route exact path="/">
-                {/* TODO: if the user is logged in, render the `Home` component, if they are not, render the `Login` component */}
+                <Home/>
               </Route>
-              <Route exact path="/crypto-list">
-                {/* TODO: if the user is logged in, render the `FavFlowers` component, if they are not, render the `Login` component */}
+              <Route exact path="/FavCrypto">
+               <FavCrypto/>
               </Route>
             </Switch>
             <Footer />
